@@ -23,6 +23,7 @@ export function getAllPosts(): Post[] {
       slug: file.replace(".mdx", "").trim(),
       title: data.title || "Sem título",
       date: data.date || "",
+      category: data.category || "geral",
     };
   });
 }
