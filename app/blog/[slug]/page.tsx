@@ -7,7 +7,7 @@ export function generateStaticParams() {
   const files = fs.readdirSync(postsDirectory);
 
   return files.map((file) => ({
-    slug: file.replace(".mdx", ""),
+    slug: file.replace(".mdx", "").trim(),
   }));
 }
 
@@ -16,12 +16,20 @@ export default function PostPage({
 }: {
   params: { slug: string };
 }) {
+  if (!params?.slug) {
+    return <div>Post inválido</div>;
+  }
+
   const filePath = path.join(
     process.cwd(),
     "content",
     "posts",
     `${params.slug}.mdx`
   );
+
+  if (!fs.existsSync(filePath)) {
+    return <div>Post não encontrado</div>;
+  }
 
   const fileContents = fs.readFileSync(filePath, "utf8");
 
@@ -33,19 +41,13 @@ export default function PostPage({
         {data.title}
       </h1>
 
-      <p
-        style={{
-          color: "#666",
-          fontSize: "14px",
-          marginBottom: "20px",
-        }}
-      >
+      <p style={{ color: "#666", marginBottom: "20px" }}>
         {data.date}
       </p>
 
       <hr style={{ marginBottom: "20px" }} />
 
-      <div style={{ fontSize: "18px" }}>{content}</div>
+      <div>{content}</div>
     </article>
   );
 }

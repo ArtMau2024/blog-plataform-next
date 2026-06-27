@@ -20,9 +20,9 @@ export function getAllPosts(): Post[] {
     const { data } = matter(fileContents);
 
     return {
-      slug: file.replace(".mdx", ""),
-      title: data.title,
-      date: data.date,
+      slug: file.replace(".mdx", "").trim(),
+      title: data.title || "Sem título",
+      date: data.date || "",
     };
   });
 }
