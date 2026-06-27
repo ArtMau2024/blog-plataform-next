@@ -37,7 +37,7 @@ export default function RootLayout({
             }}
           >
             <Link href="/" style={{ color: "#fff", textDecoration: "none" }}>
-              Meu Blog
+              HOME
             </Link>
 
             <Link href="/blog" style={{ color: "#fff" }}>
@@ -69,7 +69,7 @@ export default function RootLayout({
             color: "#555",
           }}
         >
-          © {new Date().getFullYear()} Meu Blog
+          © {new Date().getFullYear()} Tupiniquim. Todos os direitos reservados.
         </footer>
       </body>
     </html>
