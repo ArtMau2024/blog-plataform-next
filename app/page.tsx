@@ -12,7 +12,7 @@ export default function Home() {
 
       <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
         {posts.map((post: any) => (
-          <Link href={`/blog/${post.slug}`} key={post.slug}>
+          <Link key={post.slug} href={`/blog/${post.slug}`}>
             <div className="post-card">
               <h2 className="post-title">{post.title}</h2>
               <p className="post-date">{post.date}</p>
