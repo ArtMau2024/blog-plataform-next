@@ -6,7 +6,9 @@ export default function BlogPage() {
 
   return (
     <main>
-      <h1 style={{ marginBottom: "24px" }}>Blog</h1>
+      <h1 style={{ marginBottom: "24px", fontSize: "28px" }}>
+        Blog
+      </h1>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
         {posts.map((post: any) => (
@@ -24,13 +26,10 @@ export default function BlogPage() {
           padding: 28px;
           border-radius: 12px;
           background: #ffffff;
-
           border: 1px solid #eaeaea;
-
           box-shadow: 
             0 2px 6px rgba(0,0,0,0.04),
             0 8px 20px rgba(0,0,0,0.06);
-
           transition: all 0.25s ease;
         }
 
@@ -39,7 +38,6 @@ export default function BlogPage() {
           box-shadow: 
             0 6px 12px rgba(0,0,0,0.08),
             0 16px 30px rgba(0,0,0,0.12);
-
           border-color: #ddd;
         }
 
