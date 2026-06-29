@@ -2,8 +2,8 @@ import "./globals.css";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Tupiniquim",
-  description: "Blog criado com Next.js",
+  title: "HOME",
+  description: "Portal de notícias",
 };
 
 export default function RootLayout({
@@ -25,53 +25,66 @@ export default function RootLayout({
           style={{
             backgroundColor: "#111",
             color: "#fff",
-            padding: "16px",
+            padding: "16px 0",
+            width: "100%",
           }}
         >
           <nav
             style={{
-              maxWidth: "800px",
+              maxWidth: "1400px",
               margin: "0 auto",
               display: "flex",
               justifyContent: "space-between",
+              padding: "0 24px",
             }}
           >
-            <Link href="/" style={{ color: "#fff", textDecoration: "none" }}>
+            {/* ✅ LINK CORRIGIDO */}
+            <Link href="/" style={{ color: "#fff" }}>
               HOME
             </Link>
 
+            {/* ✅ LINK CORRIGIDO */}
             <Link href="/blog" style={{ color: "#fff" }}>
               Blog
             </Link>
           </nav>
         </header>
 
-        {/* CONTEÚDO */}
-        <main
+        {/* CONTAINER PRINCIPAL */}
+        <div
           style={{
-            maxWidth: "800px",
+            maxWidth: "1400px",
             margin: "20px auto",
-            backgroundColor: "#fff",
-            padding: "20px",
-            borderRadius: "8px",
-            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+            padding: "0 24px",
           }}
         >
-          {children}
-        </main>
+          <main
+            style={{
+              backgroundColor: "#fff",
+              padding: "32px",
+              borderRadius: "10px",
+              boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+            }}
+          >
+            {children}
+          </main>
+        </div>
 
         {/* FOOTER */}
         <footer
           style={{
             textAlign: "center",
-            padding: "16px",
+            padding: "20px",
             fontSize: "14px",
             color: "#555",
+            maxWidth: "1400px",
+            margin: "0 auto",
           }}
         >
-          © {new Date().getFullYear()} Tupiniquim. Todos os direitos reservados.
+          © {new Date().getFullYear()} Tupiniquim
         </footer>
       </body>
     </html>
   );
 }
+``
